@@ -1,3 +1,4 @@
+
 import { FaReact, FaNodeJs, FaCss3Alt, FaHtml5 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -32,97 +33,78 @@ export default function FrontendCard() {
     "MongoDB",
   ];
 
+  // Minimal animation everywhere - simple fade + small slide, no scale/rotate/spring
   const cardVariants = {
-    hidden: { opacity: 0, scale: 0.92 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-        staggerChildren: 0.18,
-      },
+      transition: { duration: 0.5, ease: "easeOut", staggerChildren: 0.12 },
     },
   };
 
   const riseUp = {
-    hidden: { opacity: 0, y: 28 },
+    hidden: { opacity: 0, y: 12 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.4, ease: "easeOut" },
     },
   };
 
   const tagContainer = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.06, delayChildren: 0.1 },
+      transition: { staggerChildren: 0.04, delayChildren: 0.1 },
     },
   };
 
   const tagItem = {
-    hidden: { opacity: 0, y: 12, scale: 0.8 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.35, ease: "easeOut" },
+      transition: { duration: 0.25, ease: "easeOut" },
     },
   };
 
   const gridContainer = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.09, delayChildren: 0.25 },
+      transition: { staggerChildren: 0.05, delayChildren: 0.15 },
     },
   };
 
+  // minimal - just fade + tiny y shift, no rotateX/spring/scale
   const flipCard = {
-    hidden: {
-      opacity: 0,
-      rotateX: -70,
-      y: 40,
-      scale: 0.85,
-    },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
-      rotateX: 0,
       y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
-      },
+      transition: { duration: 0.3, ease: "easeOut" },
     },
   };
 
   return (
-    <section className="flex items-center justify-center max-w-7xl mx-auto bg-[#0d0d0d] p-8">
+    <section className="flex items-center justify-center max-w-7xl mx-auto bg-[#0d0d0d] p-4 sm:p-6 lg:p-8">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.25 }}
         variants={cardVariants}
-        className="relative w-full max-w-7xl rounded-3xl overflow-hidden"
-        style={{ perspective: 1200 }}
+        className="relative w-full max-w-7xl rounded-2xl sm:rounded-3xl overflow-hidden"
       >
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-500 via-purple-500 to-green-400 animate-pulse blur-xl opacity-40"></div>
-
-        <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl p-12">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="relative rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl sm:backdrop-blur-2xl p-5 sm:p-8 lg:p-12">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14 items-start">
             <div>
               <motion.span
                 variants={riseUp}
-                className="inline-block px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-300 text-sm"
+                className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-cyan-500/20 text-cyan-300 text-xs sm:text-sm"
               >
                 Full Stack Developer
               </motion.span>
 
               <motion.h1
                 variants={riseUp}
-                className="mt-6 text-6xl font-black text-white leading-tight"
+                className="mt-4 sm:mt-6 text-3xl sm:text-4xl xl:text-6xl lg:text-[54px] font-black text-white leading-tight"
               >
                 Modern
                 <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
@@ -133,55 +115,49 @@ export default function FrontendCard() {
 
               <motion.p
                 variants={riseUp}
-                className="mt-6 text-lg text-gray-300 leading-8"
+                className="mt-4 sm:mt-6 text-sm sm:text-base lg:font-bold lg:text-[16px] text-gray-300 leading-6 sm:leading-8 xl:text-xl"
               >
                 Building beautiful, responsive and accessible web applications
                 with cutting-edge technologies.
               </motion.p>
 
               <motion.div
-                variants={tagContainer}
-                className="flex flex-wrap gap-3 mt-8"
-              >
-                {tags.map((item) => (
-                  <motion.span
-                    key={item}
-                    variants={tagItem}
-                    className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300 hover:scale-105 transition"
-                  >
-                    {item}
-                  </motion.span>
-                ))}
-              </motion.div>
-            </div>
-
-            <motion.div
-              variants={gridContainer}
-              className="grid grid-cols-3 gap-6"
-              style={{ perspective: 1000 }}
+              variants={tagContainer}
+              className="flex flex-wrap gap-1.5 sm:gap-2 lg:gap-3 mt-4 sm:mt-6"
             >
-              {skills.map((skill) => (
-                <motion.div
-                  key={skill.name}
-                  variants={flipCard}
-                  whileHover={{
-                    scale: 1.08,
-                    rotateY: 10,
-                    transition: { duration: 0.3 },
-                  }}
-                  className="group aspect-square rounded-3xl border border-white/10 bg-black/40 backdrop-blur-xl flex flex-col items-center justify-center transition-colors duration-300 hover:border-cyan-400"
-                  style={{ transformStyle: "preserve-3d" }}
+              {tags.map((item) => (
+                <motion.span
+                  key={item}
+                  variants={tagItem}
+                  className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1.5 sm:px-4 sm:py-2 lg:px-5 lg:py-2 text-xs sm:text-sm lg:text-base text-cyan-300 hover:scale-105 transition"
                 >
-                  <div
-                    className={`text-5xl ${skill.color} group-hover:rotate-12 transition`}
-                  >
-                    {skill.icon}
-                  </div>
-
-                  <p className="mt-4 text-white font-medium">{skill.name}</p>
-                </motion.div>
+                  {item}
+                </motion.span>
               ))}
             </motion.div>
+            </div>
+
+           <motion.div
+          variants={gridContainer}
+          className="grid grid-cols-3 gap-3 sm:gap-4 xl:gap-12 lg:gap-5"
+        >
+          {skills.map((skill) => (
+            <motion.div
+              key={skill.name}
+              variants={flipCard}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              className="aspect-square w-full max-w-[100px] sm:max-w-[120px] lg:max-w-[140px] mx-auto rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl flex flex-col items-center justify-center gap-1.5 sm:gap-2 p-2 transition-colors duration-300 hover:border-cyan-400 hover:bg-black/60"
+            >
+              <div className={`text-xl sm:text-2xl lg:text-3xl ${skill.color} flex-shrink-0`}>
+                {skill.icon}
+              </div>
+
+              <p className="w-full text-white font-medium text-[10px] sm:text-xs lg:text-[13px] text-center leading-tight line-clamp-2 px-0.5">
+                {skill.name}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
           </div>
         </div>
       </motion.div>

@@ -78,7 +78,7 @@ export default function ContactCards() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.6 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="flex text-5xl justify-center md:text-3xl font-extrabold text-[#0D2321] mt-10"
+        className="flex text-4xl justify-center md:text-3xl lg:text-5xl font-extrabold text-[#0D2321] mt-10"
       >
         Contacts Us
       </motion.h2>
@@ -119,7 +119,7 @@ export default function ContactCards() {
                 <div className="flex items-center gap-4">
                   <motion.div
                     variants={iconVariants}
-                    className={`${item.color} flex h-14 w-14 items-center justify-center rounded-full text-2xl text-white shadow-lg`}
+                    className={`${item.color} flex h-12 w-12 items-center justify-center rounded-full text-2xl text-white shadow-lg`}
                   >
                     {item.icon}
                   </motion.div>
