@@ -67,9 +67,9 @@ const Tech2 = () => {
       className="relative mx-auto
         w-[260px] h-[220px]
         sm:w-[340px] sm:h-[320px]
-        md:w-[440px] md:h-[220px]
-        lg:w-[420px] lg:h-[280px]
-        xl:w-[620px] xl:h-[440px]"
+        md:w-[440px] md:h-[520px]
+        lg:w-[420px] lg:h-[580px]
+        xl:w-[620px] xl:h-[640px]"
     >
       <motion.div
         initial={{
@@ -85,11 +85,11 @@ const Tech2 = () => {
           ease: "easeOut",
         }}
         className="absolute 
-        md:-top-40 md:left-100 lg:top-90 lg:left-90 xl:top-115 xl:left-110 left-58 top-20 origin-center
+         md:top-110 md:left-100 lg:top-128 lg:left-70 xl:top-140 xl:left-110 left-58 top-45 origin-center
           scale-[0.42]
           sm:scale-[0.548]
           md:scale-[0.71]
-          lg:scale-[0.753]
+          lg:scale-[0.653]
           xl:scale-80"
         style={{
           width: BOX_SIZE,

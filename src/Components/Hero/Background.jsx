@@ -20,7 +20,7 @@ const Background = () => {
         className=""
       >
         <div className="z-50 absolute top-2 w-full">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:80px_80px]" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]" />
           <Nav />
         </div>
 
@@ -29,7 +29,7 @@ const Background = () => {
           <div
             className="absolute -top-24 sm:-top-32 lg:-top-40 left-1/2 -translate-x-1/2 
                        w-[140%] sm:w-[120%] 
-                       h-[220px] sm:h-[300px] lg:h-[400px] 
+                       h-[220px] sm:h-[300px] lg:h-[600px] 
                        bg-emerald-500/40 blur-[80px] sm:blur-[100px] lg:blur-[120px] 
                        rounded-full pointer-events-none"
           />
@@ -37,7 +37,7 @@ const Background = () => {
           <div
             className="absolute -bottom-24 sm:-bottom-32 lg:-bottom-40 left-1/2 -translate-x-1/2 
                        w-[140%] sm:w-[120%] 
-                       h-[220px] sm:h-[300px] lg:h-[400px] 
+                       h-[220px] sm:h-[300px] lg:h-[600px] 
                        bg-emerald-500/40 blur-[80px] sm:blur-[100px] lg:blur-[120px] 
                        rounded-full pointer-events-none"
           />
