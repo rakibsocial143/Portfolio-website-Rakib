@@ -2,10 +2,10 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { HiOutlineViewGrid } from "react-icons/hi";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import project_1 from "../../assets/project1.png";
-import project_2 from "../../assets/project2.png";
-import project_3 from "../../assets/project3.png";
-import project_4 from "../../assets/project4.png";
+import project_1 from "../../assets/project1.webp";
+import project_2 from "../../assets/project2.webp";
+import project_3 from "../../assets/project3.webp";
+import project_4 from "../../assets/project4.webp";
 
 const projects = [
   {
@@ -42,7 +42,6 @@ const projects = [
   },
 ];
 
-// Card fades + rises up
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -52,7 +51,6 @@ const cardVariants = {
   },
 };
 
-// Image "curtain wipe" reveal — clips open from left to right
 const wipeVariants = {
   hidden: { clipPath: "inset(0 100% 0 0)" },
   visible: {

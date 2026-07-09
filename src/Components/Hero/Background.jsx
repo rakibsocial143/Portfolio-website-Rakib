@@ -2,17 +2,20 @@ import Nav from "../Navbar/Nav";
 import { motion } from "framer-motion";
 import TechOrbit from './TechOrbit'
 import HeroTitle from './HeroTitle'
+import useIsMobile from '../Hero/useMobiel'
 
 const Background = () => {
+  const isMobile = useIsMobile();
+
   return (
     <>
       <motion.section
-        initial={{
+        initial={isMobile ? false : {
           opacity: 0,
           scale: 0.9,
           y: 40,
         }}
-        animate={{
+        animate={isMobile ? {} : {
           opacity: 1,
           scale: 1,
           y: [0, -18, 0],

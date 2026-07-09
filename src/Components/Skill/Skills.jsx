@@ -1,25 +1,54 @@
-
-import { FaReact, FaNodeJs, FaCss3Alt, FaHtml5 } from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiJavascript,
-  SiMongodb,
-} from "react-icons/si";
 import { motion } from "framer-motion";
+
+import react from "../../assets/icons/react-original.webp";
+import nextJs from "../../assets/icons/nextjs-original.webp";
+import typeScript from "../../assets/icons/typescript-original.webp";
+import javascript from "../../assets/icons/javascript-original.webp";
+import tailwindCss from "../../assets/icons/tailwindcss-icon.webp";
+import nodeJs from "../../assets/icons/nodejs-original.webp";
+import html_5 from "../../assets/icons/html5-original.webp";
+import mondoDB from "../../assets/icons/mongodb-original.webp";
+import vanilaCss from "../../assets/icons/css3-original.webp";
 
 export default function FrontendCard() {
   const skills = [
-    { name: "React", icon: <FaReact />, color: "text-cyan-400" },
-    { name: "Next.js", icon: <SiNextdotjs />, color: "text-white" },
-    { name: "TypeScript", icon: <SiTypescript />, color: "text-blue-400" },
-    { name: "JavaScript", icon: <SiJavascript />, color: "text-yellow-400" },
-    { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "text-cyan-300" },
-    { name: "Node.js", icon: <FaNodeJs />, color: "text-green-400" },
-    { name: "HTML5", icon: <FaHtml5 />, color: "text-orange-500" },
-    { name: "MongoDB", icon: <SiMongodb />, color: "text-green-500" },
-    { name: "Vanilla CSS", icon: <FaCss3Alt />, color: "text-blue-500" },
+    {
+      name: "React",
+      icon: react,
+    },
+    {
+      name: "Next.js",
+      icon: nextJs,
+      invert: true,
+    },
+    {
+      name: "TypeScript",
+      icon: typeScript,
+    },
+    {
+      name: "JavaScript",
+      icon: javascript,
+    },
+    {
+      name: "Tailwind CSS",
+      icon: tailwindCss,
+    },
+    {
+      name: "Node.js",
+      icon: nodeJs,
+    },
+    {
+      name: "HTML5",
+      icon: html_5,
+    },
+    {
+      name: "MongoDB",
+      icon: mondoDB,
+    },
+    {
+      name: "Vanilla CSS",
+      icon: vanilaCss,
+    },
   ];
 
   const tags = [
@@ -33,7 +62,6 @@ export default function FrontendCard() {
     "MongoDB",
   ];
 
-  // Minimal animation everywhere - simple fade + small slide, no scale/rotate/spring
   const cardVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -73,7 +101,6 @@ export default function FrontendCard() {
     },
   };
 
-  // minimal - just fade + tiny y shift, no rotateX/spring/scale
   const flipCard = {
     hidden: { opacity: 0, y: 10 },
     visible: {
@@ -122,42 +149,44 @@ export default function FrontendCard() {
               </motion.p>
 
               <motion.div
-              variants={tagContainer}
-              className="flex flex-wrap gap-1.5 sm:gap-2 lg:gap-3 mt-4 sm:mt-6"
-            >
-              {tags.map((item) => (
-                <motion.span
-                  key={item}
-                  variants={tagItem}
-                  className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1.5 sm:px-4 sm:py-2 lg:px-5 lg:py-2 text-xs sm:text-sm lg:text-base text-cyan-300 hover:scale-105 transition"
-                >
-                  {item}
-                </motion.span>
-              ))}
-            </motion.div>
+                variants={tagContainer}
+                className="flex flex-wrap gap-1.5 sm:gap-2 lg:gap-3 mt-4 sm:mt-6"
+              >
+                {tags.map((item) => (
+                  <motion.span
+                    key={item}
+                    variants={tagItem}
+                    className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1.5 sm:px-4 sm:py-2 lg:px-5 lg:py-2 text-xs sm:text-sm lg:text-base text-cyan-300 hover:scale-105 transition"
+                  >
+                    {item}
+                  </motion.span>
+                ))}
+              </motion.div>
             </div>
 
-           <motion.div
-          variants={gridContainer}
-          className="grid grid-cols-3 gap-3 sm:gap-4 xl:gap-12 lg:gap-5"
-        >
-          {skills.map((skill) => (
             <motion.div
-              key={skill.name}
-              variants={flipCard}
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              className="aspect-square w-full max-w-[100px] sm:max-w-[120px] lg:max-w-[140px] mx-auto rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl flex flex-col items-center justify-center gap-1.5 sm:gap-2 p-2 transition-colors duration-300 hover:border-cyan-400 hover:bg-black/60"
+              variants={gridContainer}
+              className="grid grid-cols-3 gap-3 sm:gap-4 xl:gap-12 lg:gap-5"
             >
-              <div className={`text-xl sm:text-2xl lg:text-3xl ${skill.color} flex-shrink-0`}>
-                {skill.icon}
-              </div>
+              {skills.map((skill) => (
+                <motion.div
+                  key={skill.name}
+                  variants={flipCard}
+                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                  className="aspect-square w-full max-w-[100px] sm:max-w-[120px] lg:max-w-[140px] mx-auto rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl flex flex-col items-center justify-center gap-1.5 sm:gap-2 p-2 transition-colors duration-300 hover:border-cyan-400 hover:bg-black/60"
+                >
+                  <img
+                    src={skill.icon}
+                    alt={skill.name}
+                    className={`w-6 h-6 sm:w-8 sm:h-8 lg:w-9 lg:h-9 object-contain flex-shrink-0 ${skill.invert ? "invert" : ""}`}
+                  />
 
-              <p className="w-full text-white font-medium text-[10px] sm:text-xs lg:text-[13px] text-center leading-tight line-clamp-2 px-0.5">
-                {skill.name}
-              </p>
+                  <p className="w-full text-white font-medium text-[10px] sm:text-xs lg:text-[13px] text-center leading-tight line-clamp-2 px-0.5">
+                    {skill.name}
+                  </p>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
           </div>
         </div>
       </motion.div>

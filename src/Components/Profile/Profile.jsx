@@ -1,7 +1,7 @@
 
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
-import profile2 from '../../assets/rakib.png'
+import profile2 from '../../assets/rakib.webp'
 
 const container = {
   hidden: {},

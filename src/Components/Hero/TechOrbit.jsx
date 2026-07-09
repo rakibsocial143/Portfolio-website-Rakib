@@ -1,49 +1,60 @@
 import { useMemo } from "react";
-import profile from "../../assets/profile.png";
+import profile from "../../assets/modle.webp";
 import { motion } from "framer-motion";
+import useIsMobile from "../Hero/useMobiel"; 
 
+import html_5 from '../../assets/icons/html5-original.webp'
+import css from '../../assets/icons/css3-original.webp'
+import javascript from '../../assets/icons/javascript-original.webp'
+import typescript from '../../assets/icons/typescript-original.webp'
+import react from '../../assets/icons/react-original.webp'
+import tailwiendCss from '../../assets/icons/tailwindcss-icon.webp'
+import textJs from '../../assets/icons/nextjs-original.webp'
+import nodeJs from '../../assets/icons/nodejs-original.webp'
+import mondoDB from '../../assets/icons/mongodb-original.webp'
+import gitHub from '../../assets/icons/git-original.webp'
 
 
 const ICONS = [
   {
     name: "HTML",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    src: html_5,
   },
   {
     name: "CSS",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    src: css,
   },
   {
     name: "JavaScript",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    src: javascript,
   },
   {
     name: "TypeScript",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    src: typescript,
   },
   {
     name: "React",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    src: react,
   },
   {
     name: "Tailwind CSS",
-    src: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+    src: tailwiendCss,
   },
   {
     name: "Next.js",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    src: textJs,
   },
   {
     name: "Node.js",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    src: nodeJs,
   },
   {
     name: "MongoDB",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    src: mondoDB,
   },
   {
     name: "Git",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    src: gitHub,
   },
 ];
 
@@ -52,6 +63,8 @@ const ICON_SIZE = 100;
 const BOX_SIZE = RING_SIZE + 100;
 
 const TechOrbit = () => {
+  const isMobile = useIsMobile();
+
   const positions = useMemo(() => {
     const radius = RING_SIZE / 2;
     return ICONS.map((icon, i) => {
@@ -72,11 +85,11 @@ const TechOrbit = () => {
         xl:w-[620px] xl:h-[640px]"
     >
       <motion.div
-        initial={{
+        initial={isMobile ? false : {
           opacity: 0,
           scale: 0.8,
         }}
-        animate={{
+        animate={isMobile ? {} : {
           opacity: 1,
           scale: 1,
         }}
