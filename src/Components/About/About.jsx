@@ -107,7 +107,7 @@ export default function About() {
       };
 
   return (
-    <section className="bg-[#0d0d0d] max-w-7xl mx-auto text-white py-12 sm:py-16 lg:py-20 overflow-hidden">
+    <section id='about' className="bg-[#0d0d0d] max-w-7xl mx-auto text-white py-12 sm:py-16 lg:py-20 overflow-hidden">
       <style>{`
         @keyframes float1 { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
         @keyframes float2 { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(10px); } }

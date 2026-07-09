@@ -6,6 +6,23 @@ import Logo from "../Logo/Logo";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleAbutClick = () => {
+    const aboutSection = document.getElementById('about');
+    aboutSection.scrollIntoView({behavior: 'smooth'})
+  }
+  const handleSkillClick = () => {
+    const aboutSection = document.getElementById('skill');
+    aboutSection.scrollIntoView({behavior: 'smooth'})
+  }
+  const handleContactClick = () => {
+    const aboutSection = document.getElementById('contact');
+    aboutSection.scrollIntoView({behavior: 'smooth'})
+  }
+  const handleHometClick = () => {
+    const aboutSection = document.getElementById('home');
+    aboutSection.scrollIntoView({behavior: 'smooth'})
+  }
+
   const linkClass = (isActive) =>
     isActive
       ? `relative overflow-hidden px-4 py-3 md:px-6 md:py-4 lg:px-8 lg:py-5 text-white bg-white/[0.05] shadow-[0_0_25px_rgba(255,255,255,0.18),inset_0_0_20px_rgba(255,255,255,0.04)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:shadow-[0_0_12px_rgba(255,255,255,0.8)] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[3px] after:bg-gradient-to-r after:from-transparent after:via-white after:to-transparent after:shadow-[0_0_12px_rgba(255,255,255,0.8)]`
@@ -21,7 +38,9 @@ const Navbar = () => {
             </div>
 
             <div className="hidden md:flex justify-center lg:col-span-3">
-              <NavLink to="/" className={({ isActive }) => linkClass(isActive)}>
+              <NavLink
+              onClick={handleHometClick}
+              to="/" className={({ isActive }) => linkClass(isActive)}>
                 Home
               </NavLink>
               <div className="w-px bg-white/10" />
@@ -36,6 +55,7 @@ const Navbar = () => {
               <div className="hidden md:block w-px bg-white/10" />
 
               <NavLink
+                onClick={handleAbutClick}
                 to="/about"
                 className={({ isActive }) => linkClass(isActive)}
               >
@@ -44,6 +64,7 @@ const Navbar = () => {
               <div className="w-px bg-white/10" />
 
               <NavLink
+                onClick={handleSkillClick}
                 to="/skills"
                 className={({ isActive }) =>
                   `hidden lg:block ${linkClass(isActive)}`
@@ -53,6 +74,7 @@ const Navbar = () => {
               </NavLink>
               <div className="hidden lg:block w-px bg-white/10" />
               <NavLink
+                onClick={handleContactClick}
                 to="/contacts"
                 className={({ isActive }) =>
                   `hidden lg:block ${linkClass(isActive)}`

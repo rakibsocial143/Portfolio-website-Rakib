@@ -1,8 +1,8 @@
 import Nav from "../Navbar/Nav";
 import { motion } from "framer-motion";
-import TechOrbit from './TechOrbit'
-import HeroTitle from './HeroTitle'
-import useIsMobile from '../Hero/useMobiel'
+import TechOrbit from "./TechOrbit";
+import HeroTitle from "./HeroTitle";
+import useIsMobile from "../Hero/useMobiel";
 
 const Background = () => {
   const isMobile = useIsMobile();
@@ -10,25 +10,33 @@ const Background = () => {
   return (
     <>
       <motion.section
-        initial={isMobile ? false : {
-          opacity: 0,
-          scale: 0.9,
-          y: 40,
-        }}
-        animate={isMobile ? {} : {
-          opacity: 1,
-          scale: 1,
-          y: [0, -18, 0],
-        }}
+        initial={
+          isMobile
+            ? false
+            : {
+                opacity: 0,
+                scale: 0.9,
+                y: 40,
+              }
+        }
+        animate={
+          isMobile
+            ? {}
+            : {
+                opacity: 1,
+                scale: 1,
+                y: [0, -18, 0],
+              }
+        }
         className=""
+        id='home'
       >
-        <div className="z-50 absolute top-2 w-full">
+        <div className="fixed top-2 left-0 w-full z-50">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]" />
           <Nav />
         </div>
 
         <div className="relative bg-[#050505] overflow-hidden">
-
           <div
             className="absolute -top-24 sm:-top-32 lg:-top-40 left-1/2 -translate-x-1/2 
                        w-[140%] sm:w-[120%] 

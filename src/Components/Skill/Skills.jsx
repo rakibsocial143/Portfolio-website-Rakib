@@ -111,7 +111,7 @@ export default function FrontendCard() {
   };
 
   return (
-    <section className="flex items-center justify-center max-w-7xl mx-auto bg-[#0d0d0d] p-4 sm:p-6 lg:p-8">
+    <section id='skill' className="flex items-center justify-center max-w-7xl mx-auto bg-[#0d0d0d] p-4 sm:p-6 lg:p-8">
       <motion.div
         initial="hidden"
         whileInView="visible"

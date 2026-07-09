@@ -55,7 +55,7 @@ const cardVariants = {
 
 export default function ContactCards() {
   return (
-    <section className="bg-gray-400 pb-20 pt-10 px-5">
+    <section id='contact' className="bg-gray-400 pb-20 pt-10 px-5">
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
